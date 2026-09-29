@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부산 편의점 지도</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet MarkerCluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="sidebar">
+        <h2>부산 편의점 지도</h2>
+        
+        <div class="filter-group">
+            <label for="region-filter">지역(구/군) 선택:</label>
+            <select id="region-filter">
+                <option value="all">전체</option>
+                <!-- JS로 동적 생성됨 -->
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="brand-filter">브랜드 선택:</label>
+            <select id="brand-filter">
+                <option value="all">전체</option>
+                <option value="CU">CU</option>
+                <option value="GS25">GS25</option>
+                <option value="세븐일레븐">세븐일레븐</option>
+                <option value="이마트24">이마트24</option>
+                <option value="미니스톱">미니스톱</option>
+                <option value="기타">기타 브랜드/개인</option>
+            </select>
+        </div>
+        
+        <div id="stats">
+            검색 결과: <span id="result-count">0</span>개
+        </div>
+        
+        <div class="info-text">
+            * 지도 타일을 불러오기 위해 인터넷 연결이 필요합니다.
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet MarkerCluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    
+    <!-- Data JS -->
+    <script src="data.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
